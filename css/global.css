@@ -20,16 +20,16 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
-	background: url("../images/bg2.jpg") no-repeat center center;
-	height: 100vh;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+    background: url("../images/bg2.jpg") no-repeat left center;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'UnitedItalicCondHeavy';
+    font-family: 'UnitedItalicCondHeavy', 'Lato', sans-serif;
 }
 
 a, a:visited {
@@ -181,14 +181,192 @@ a:hover, a:focus, a:active {
 }
 
 
-/*-----------
-	Dash
------------*/
+/*----------------
+	 Sidebar
+----------------*/
+.sidebar {
+	width: 290px;
+	background-color: rgba(0,0,0,.65);
+	color: white;
+	height: 100vh;
+	position: fixed;
+	z-index: 10000;
+	left: 0;
+	top: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-transition: .25s left linear;
+	-moz-transition: .25s left linear;
+	transition: .25s left linear;
+}
+
+.sidebar.open {
+	left: 0;
+}
+
+.sidebar.close {
+	left: -100%;
+}
+
+.sidebar-header {
+	width: 290px;
+	background-color: rgba(0,0,0,.7);
+	height: 49px;
+}
+
+.sidebar-logo {
+	width: 150px;
+	max-width: 95%;
+	display: block;
+	margin: auto;
+    padding: 9px 0 8px;
+}
+
+.user-photo {
+	border-radius: 50%;
+	border: 6px solid rgba(183,32,37,.2);
+	margin: 30px auto 6px;
+	max-width: 160px;
+	display: block;
+}
+
+.trainer-name {
+	letter-spacing: 1px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 10px 0 0;
+}
+
+.trainer-rank {
+	color: rgb(183,32,37);
+	padding: 0;
+	margin: 0 0 30px;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+
+.sidebar-wrapper {
+	padding: 0 22px;
+}
+
+.sidebar-section {
+	margin: 15px 0;
+}
+
+.sidebar-title {
+	margin: 0;
+	padding: 13px 10px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font: 13px "Lato", sans-serif;
+	background: rgba(183,32,37,.2);
+	color: rgb(183,32,37);
+}
+
+.sidebar .panel-group {
+    font-weight: 300;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-justify-content: space-around;
+	-webkit-justify-content: space-around;
+	-ms-justify-content: space-around;
+	justify-content: space-around;
+	align-items: stretch;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+
+.sidebar .panel {
+	background: rgba(0,0,0,.2);
+	border-radius: 4px;
+	padding: 12px;
+	margin: 4px 1.5%;
+	text-align: center;
+	border: 1px solid rgba(255,255,255,.1);
+}
+
+.sidebar .panel h3 {
+	font: 12px "Lato", sans-serif;
+	margin: 0 0 5px;
+	padding-bottom: 5px;
+	text-transform: uppercase;
+	border-bottom: 1px solid rgba(255,255,255,.1);
+	color: #aaa;
+}
+
+.sidebar .panel p {
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar .panel p.current-payment {
+	color: rgb(207, 52, 57);
+	font-size: 16px;
+	letter-spacing: 1px;
+	font-weight: 700;
+}
+
+.sidebar .panel p.current-payment span {
+	font-size: 12px;
+	color: #666;
+}
+
+.sidebar .panel-full {
+	width: 97%;
+}
+
+.sidebar .panel-half {
+	width: 47%;
+}
+
+
+/*----------------
+	Header/Nav
+----------------*/
 .dashboard-header {
 	background-color: rgba(0,0,0,.75);
 	min-height: 49px;
 	position: fixed;
 	width: calc(100% - 290px);
+	-webkit-transition: .25s width linear;
+	-moz-transition: .25s width linear;
+	transition: .25s width linear;
+}
+
+.dashboard-header.open {
+	width: calc(100% - 290px);
+}
+
+.dashboard-header.close {
+	width: 100%;
+}
+
+.sidebar-toggle button {
+	border: 0 none;
+	background: transparent;
+    color: rgba(255,255,255,.5);
+    font-size: 2em;
+    padding: 10px 12px 11px;
+	-webkit-transition: .25s color linear, .25s transform .5s linear;
+	-moz-transition: .25s color linear, .25s transform .5s linear;
+    transition: .25s color linear, .25s transform .5s linear;
+}
+
+.sidebar-toggle button:hover {
+    cursor: pointer;
+    color: rgba(183,32,37,1);
+}
+
+.sidebar-toggle button:focus,
+.sidebar-toggle button:active {
+	outline: 0;
 }
 
 .navbar {
@@ -219,7 +397,9 @@ a:hover, a:focus, a:active {
 .navbar-default .navbar-toggle:focus .icon-bar,
 .navbar-default .navbar-toggle:hover .icon-bar {
     background-color: white;
-    transition: .25s linear all;
+	-webkit-transition: .25s transform linear, .25s opacity linear, .25s transform-origin linear;
+	-moz-transition: .25s transform linear, .25s opacity linear, .25s transform-origin linear;
+    transition: .25s transform linear, .25s opacity linear, .25s transform-origin linear;
 }
 
 .navbar-default .navbar-toggle:focus,
@@ -269,141 +449,6 @@ a:hover, a:focus, a:active {
 	color: rgb(207,52,57);
 }
 
-.sidebar {
-	width: 290px;
-	background-color: rgba(0,0,0,.65);
-	color: white;
-	height: 100vh;
-	position: fixed;
-	z-index: 10000;
-	left: 0;
-	top: 0;
-	overflow-x: hidden;
-	overflow-y: auto;
-	-webkit-transition: .25s all linear;
-	-moz-transition: .25s all linear;
-	-o-transition: .25s all linear;
-	transition: .25s all linear;
-}
-
-.sidebar-header {
-	width: 290px;
-	background-color: rgba(0,0,0,.7);
-	height: 49px;
-}
-
-.sidebar-logo {
-	width: 150px;
-	max-width: 95%;
-	display: block;
-	margin: auto;
-    padding: 9px 0 8px;
-}
-
-.user-photo {
-	border-radius: 50%;
-	border: 6px solid rgba(0,0,0,.6);
-	margin: 30px auto 6px;
-	max-width: 160px;
-	display: block;
-}
-
-.trainer-name {
-	letter-spacing: 1px;
-	text-align: center;
-	text-transform: uppercase;
-	margin: 10px 0 0;
-}
-
-.trainer-rank {
-	color: rgb(183,32,37);
-	padding: 0;
-	margin: 0 0 30px;
-	font-weight: 300;
-	text-transform: uppercase;
-	text-align: center;
-	font-size: 13px;
-	letter-spacing: 1px;
-}
-
-.sidebar-wrapper {
-	padding: 0 22px;
-}
-
-.sidebar-section {
-	margin: 15px 0;
-}
-
-.sidebar-title {
-	margin: 0;
-	padding: 13px 10px;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font: 13px "Lato", sans-serif;
-	background: rgba(0,0,0,.3);
-	color: rgb(183,32,37);
-}
-
-.sidebar .panel-group {
-    font-weight: 300;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	-moz-justify-content: space-around;
-	-webkit-justify-content: space-around;
-	-ms-justify-content: space-around;
-	justify-content: space-around;
-	align-items: stretch;
-	flex-wrap: wrap;
-	padding: 10px;
-}
-
-.sidebar .panel {
-	background: rgba(0,0,0,.2);
-	border-radius: 4px;
-	padding: 12px;
-	margin: 1.5%;
-	text-align: center;
-	border: 1px solid rgba(255,255,255,.1);
-}
-
-.sidebar .panel h3 {
-	font: 12px "Lato", sans-serif;
-	margin: 0 0 5px;
-	padding-bottom: 5px;
-	text-transform: uppercase;
-	border-bottom: 1px solid rgba(255,255,255,.1);
-	color: #aaa;
-}
-
-.sidebar .panel p {
-	font-size: 13px;
-	margin: 0;
-	padding: 0;
-}
-
-.sidebar .panel p.current-payment {
-	color: rgb(207, 52, 57);
-	font-size: 16px;
-	letter-spacing: 1px;
-	font-weight: 700;
-}
-
-.sidebar .panel p.current-payment span {
-	font-size: 12px;
-	color: #666;
-}
-
-.sidebar .panel-full {
-	width: 97%;
-}
-
-.sidebar .panel-half {
-	width: 47%;
-}
-
 
 /*------------------------
 	Dashboard Content
@@ -411,18 +456,28 @@ a:hover, a:focus, a:active {
 .dashboard {
     margin-left: 290px;
     width: calc(100% - 290px);
-    -webkit-transition: .25s all linear;
-    -moz-transition: .25s all linear;
-    -o-transition: .25s all linear;
-    transition: .25s all linear;
+    -webkit-transition: .25s margin linear, .25s width linear;
+    -moz-transition: .25s margin linear, .25s width linear;
+    transition: .25s margin linear, .25s width linear;
     height: 100vh;
     overflow-y: scroll;
+}
+
+.dashboard.open {
+	margin-left: 290px;
+    width: calc(100% - 290px);
+}
+
+.dashboard.close {
+	margin-left: 0;
+    width: 100%;
 }
 
 .content {
     margin: 49px auto 0;
     padding: 20px;
     min-height: 100vh;
+    max-width: 1200px;
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -515,7 +570,7 @@ a:hover, a:focus, a:active {
 .dashboard-module .panel {
 	background: rgba(0,0,0,.75);
 	padding: 18px;
-	margin: 1.5%;
+	margin: 4px 1.5%;
 	text-align: center;
 }
 
@@ -605,7 +660,7 @@ a:hover, a:focus, a:active {
 	}
 }
 
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
 	.sidebar {
 		left: -100%;
 	}
@@ -623,7 +678,7 @@ a:hover, a:focus, a:active {
 	.content {
 		margin-top: 0;
 	}
-}
+}*/
 
 @media screen and (max-width: 560px) {
 	.dashboard-module .panel-quarter {

@@ -2,15 +2,15 @@ window.site = window.site || {};
 
 site.dashboard = (function($) {
     function initSidebar() {
-        $('.sidebar .menu-icon').on('click', function(){
+        $(document).on('click', '.sidebar-toggle-button', function(){
             if($('.sidebar').hasClass('close')){
-                $(this).css('transform','rotate(180deg)');
-                $('.sidebar').removeClass('close');
-                $('.sidebar').addClass('open');
+                $('.sidebar-toggle-button').css('transform','rotate(0deg)');
+                $('.sidebar, .dashboard-header, .dashboard').removeClass('close');
+                $('.sidebar, .dashboard-header, .dashboard').addClass('open');
             } else {
-                $(this).css('transform','rotate(0deg)');
-                $('.sidebar').removeClass('open');
-                $('.sidebar').addClass('close');
+                $('.sidebar-toggle-button').css('transform','rotate(-180deg)');
+                $('.sidebar, .dashboard-header, .dashboard').removeClass('open');
+                $('.sidebar, .dashboard-header, .dashboard').addClass('close');
             }
         });
     }

@@ -20,7 +20,7 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
-	background: url("../images/bg.jpg") no-repeat center center;
+	background: url("../images/bg2.jpg") no-repeat center center;
 	height: 100vh;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -57,10 +57,6 @@ a:hover, a:focus, a:active {
 /*-----------
 	Login
 -----------*/
-.login-wrapper {
-
-}
-
 .login-container {
 	max-width: 90vw;
 	margin: auto;
@@ -68,7 +64,7 @@ a:hover, a:focus, a:active {
 
 .login-container .logo {
 	margin: 0 auto;
-	padding: 8% 0 40px;
+	padding: 8% 0 20px;
 	display: block;
 	width: 320px;
 	max-width: 90%;
@@ -76,7 +72,7 @@ a:hover, a:focus, a:active {
 
 .login-form {
 	background-color: rgba(0,0,0,.85);
-	box-shadow: 10px 10px 0 rgba(0,0,0,.1);
+	box-shadow: 10px 10px 0 rgba(0,0,0,.2);
 	padding-bottom: 16px;
 	max-width: 90%;
 	width: 410px;
@@ -189,68 +185,93 @@ a:hover, a:focus, a:active {
 	Dash
 -----------*/
 .dashboard-header {
-	background-color: rgba(0,0,0,.85);
-	height: 49px;
-	display: flex;
+	background-color: rgba(0,0,0,.75);
+	min-height: 49px;
 	position: fixed;
 	width: calc(100% - 290px);
 }
 
-.dashboard-nav {
-	width: calc(100vw - 260px);
+.navbar {
+	min-height: 49px;
+	margin-bottom: 0;
 }
 
-.dashboard-nav ul {
-	text-align: right;
-	list-style: none;
+.navbar-default {
+	background-color: transparent;
+	border: 0 none;
+}
+
+.navbar-default .navbar-toggle {
+    border: 0 none;
+    padding: 17px 17px 18px;
+    margin: 0;
+}
+
+.navbar-collapse {
+	border-top: 0 none;
+}
+
+.navbar-nav {
 	margin: 0;
-	padding: 0;
 }
 
-.dashboard-nav ul > li {
-	display: inline-block;
+.navbar-default .navbar-toggle .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar,
+.navbar-default .navbar-toggle:hover .icon-bar {
+    background-color: white;
+    transition: .25s linear all;
 }
 
-.dashboard-nav .fa {
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle.collapsed .icon-bar.mid { opacity: 1; }
+.navbar-default .navbar-toggle.collapsed .icon-bar.top { transform: rotate(0); transform-origin: 0;}
+.navbar-default .navbar-toggle.collapsed .icon-bar.bottom { transform: rotate(0); transform-origin: 0; }
+.navbar-default .navbar-toggle .icon-bar.mid { opacity: 0; }
+.navbar-default .navbar-toggle .icon-bar.top { transform: rotate(45deg); transform-origin: 11%;}
+.navbar-default .navbar-toggle .icon-bar.bottom { transform: rotate(-45deg); transform-origin: 11%; }
+
+.navbar-default .navbar-nav>li>a.fa {
 	padding-right: 5px;
 }
 
-.dashboard-nav ul > li a,
-.dashboard-nav ul > li a:visited,
-.dashboard-nav ul > li a i.fa,
-.dashboard-nav ul > li a:visited i.fa {
-	-webkit-transition: .25s all linear;
-	-moz-transition: .25s all linear;
-	transition: .25s all linear;
-}
-
-.dashboard-nav ul > li a,
-.dashboard-nav ul > li a:visited {
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:visited {
 	color: white;
-	padding: 16px 20px;
+	padding: 14px 17px 15px;
 	text-decoration: none;
 	display: inline-block;
 	font-size: .9em;
 	font-weight: 300;
+	text-transform: capitalize;
+	letter-spacing: 1px;
 }
 
-.dashboard-nav ul > li a:hover,
-.dashboard-nav ul > li a:focus,
-.dashboard-nav ul > li a:active {
-	background-color: rgba(48,48,48,1);
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:visited,
+.navbar-default .navbar-nav>li>a i.fa,
+.navbar-default .navbar-nav>li>a:visited i.fa {
 	color: white;
+	-webkit-transition: .15s color linear;
+	-moz-transition: .15s color linear;
+	transition: .15s color linear;
 }
 
-.dashboard-nav ul > li a:hover i.fa,
-.dashboard-nav ul > li a:focus i.fa,
-.dashboard-nav ul > li a:active i.fa {
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:hover i.fa,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:focus i.fa,
+.navbar-default .navbar-nav>li>a:active,
+.navbar-default .navbar-nav>li>a:active i.fa {
 	color: rgb(207,52,57);
 }
 
-
 .sidebar {
 	width: 290px;
-	background-color: rgba(0,0,0,.85);
+	background-color: rgba(0,0,0,.65);
 	color: white;
 	height: 100vh;
 	position: fixed;
@@ -267,7 +288,7 @@ a:hover, a:focus, a:active {
 
 .sidebar-header {
 	width: 290px;
-	background-color: rgba(0,0,0,.4);
+	background-color: rgba(0,0,0,.7);
 	height: 49px;
 }
 
@@ -281,7 +302,7 @@ a:hover, a:focus, a:active {
 
 .user-photo {
 	border-radius: 50%;
-	border: 6px solid rgba(0,0,0,.3);
+	border: 6px solid rgba(0,0,0,.6);
 	margin: 30px auto 6px;
 	max-width: 160px;
 	display: block;
@@ -324,7 +345,7 @@ a:hover, a:focus, a:active {
 	color: rgb(183,32,37);
 }
 
-.panel-group {
+.sidebar .panel-group {
     font-weight: 300;
 	display: -moz-flex;
 	display: -webkit-flex;
@@ -339,7 +360,7 @@ a:hover, a:focus, a:active {
 	padding: 10px;
 }
 
-.panel {
+.sidebar .panel {
 	background: rgba(0,0,0,.2);
 	border-radius: 4px;
 	padding: 12px;
@@ -348,7 +369,7 @@ a:hover, a:focus, a:active {
 	border: 1px solid rgba(255,255,255,.1);
 }
 
-.panel h3 {
+.sidebar .panel h3 {
 	font: 12px "Lato", sans-serif;
 	margin: 0 0 5px;
 	padding-bottom: 5px;
@@ -357,29 +378,29 @@ a:hover, a:focus, a:active {
 	color: #aaa;
 }
 
-.panel p {
+.sidebar .panel p {
 	font-size: 13px;
 	margin: 0;
 	padding: 0;
 }
 
-.panel p.current-payment {
+.sidebar .panel p.current-payment {
 	color: rgb(207, 52, 57);
 	font-size: 16px;
 	letter-spacing: 1px;
 	font-weight: 700;
 }
 
-.panel p.current-payment span {
+.sidebar .panel p.current-payment span {
 	font-size: 12px;
 	color: #666;
 }
 
-.panel-full {
+.sidebar .panel-full {
 	width: 97%;
 }
 
-.panel-half {
+.sidebar .panel-half {
 	width: 47%;
 }
 
@@ -419,21 +440,111 @@ a:hover, a:focus, a:active {
 .dashboard-module {
 	width: 97%;
 	margin: 15px 1.5%;
-	background-color: rgba(255,255,255,.7);
-	box-shadow: 10px 10px 0 rgba(0,0,0,.1);
+	background-color: rgba(255,255,255,.85);
+	box-shadow: 10px 10px 0 rgba(0,0,0,.2);
+	overflow-x: scroll;
 }
 
 .dashboard-module-title {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 2px solid rgba(183,32,37,.8);
 	text-transform: uppercase;
-	padding: 20px 25px 15px;
-	font-size: 21px;
+	padding: 22px 25px 15px;
+	font-size: 20px;
 	margin: 0;
 	letter-spacing: 2px;
 }
 
 .dashboard-module-wrapper {
 	padding: 25px;
+	display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table tr:last-child th,
+.table tr:last-child td { border-bottom: 0 none; }
+
+
+.table tr.highlighted {
+	color: rgb(283,32,37);
+	background-color: rgba(222,222,222,.45);
+}
+
+.table tr th,
+.table tr td {
+	border-bottom: 1px solid #d6d6d6;
+	padding: 10px;
+	text-align: center;
+}
+
+.table tr th {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+.table tr td {
+	font-weight: 300;
+}
+
+.table .align-left {
+	text-align: left;
+}
+
+.dashboard-module .panel-group {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-justify-content: space-around;
+	-webkit-justify-content: space-around;
+	-ms-justify-content: space-around;
+	justify-content: space-around;
+	align-items: stretch;
+	flex-wrap: wrap;
+	padding: 20px;
+}
+
+.dashboard-module .panel {
+	background: rgba(0,0,0,.75);
+	padding: 18px;
+	margin: 1.5%;
+	text-align: center;
+}
+
+.dashboard-module .panel h3 {
+	font: 14px "Lato", sans-serif;
+	margin: 0 0 8px;
+	padding-bottom: 8px;
+	text-transform: uppercase;
+	color: rgb(183,32,37);
+	letter-spacing: 2px;
+}
+
+.dashboard-module .panel p {
+	font: 46px "UnitedItalicCondHeavy", sans-serif;
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+
+.dashboard-module .panel-full {
+	width: 97%;
+}
+
+.dashboard-module .panel-half {
+	width: 47%;
+}
+
+.dashboard-module .panel-quarter {
+	width: 22%;
 }
 
 
@@ -478,4 +589,44 @@ a:hover, a:focus, a:active {
     0% { opacity: 0; }
     10% { opacity: 0; }
     100%   { opacity: 1; }
+}
+
+
+/*----------------------
+	Media Queries
+----------------------*/
+@media screen and (max-width: 968px) {
+	.dashboard-header {
+		background-color: rgba(0,0,0,.9);
+	}
+
+	.dashboard-module .panel-quarter {
+		width: 47%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.sidebar {
+		left: -100%;
+	}
+
+	.dashboard {
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.dashboard-header {
+		position: static;
+		width: 100%;
+	}
+
+	.content {
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.dashboard-module .panel-quarter {
+		width: 100%;
+	}
 }

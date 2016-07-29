@@ -4,29 +4,27 @@ var trainerAppControllers = angular.module("trainerAppControllers", ['ngAnimate'
 //Application Routes
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/', {
-        templateUrl: 'partials/login.html',
-        controller: 'loginController'
+        templateUrl: 'partials/login.html'
     }).when('/logout', {
-        templateUrl: 'partials/login.html',
-        controller: 'loginController'
+        templateUrl: 'partials/login.html'
     }).when('/dashboard', {
         templateUrl: 'partials/dashboard.html',
         controller: 'dashController'
     }).when('/income', {
         templateUrl: 'partials/income.html',
-        controller: 'incomeController'
+        controller: 'dashController'
     }).when('/reports', {
         templateUrl: 'partials/reports.html',
-        controller: 'reportsController'
+        controller: 'dashController'
     }).when('/scoreboard', {
         templateUrl: 'partials/scoreboard.html',
-        controller: 'scoreboardController'
+        controller: 'dashController'
     }).when('/awards', {
         templateUrl: 'partials/awards.html',
-        controller: 'awardsController'
+        controller: 'dashController'
     }).when('/account', {
         templateUrl: 'partials/account.html',
-        controller: 'accountController'
+        controller: 'dashController'
     }).otherwise({
         redirectTo: '/'
     });

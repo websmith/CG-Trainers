@@ -40,7 +40,7 @@ app.directive("dashboardHeader", function(){
     };
 });
 
-app.directive("sidebar", function(){
+app.directive('sidebar', function(){
     return {
         restrict: 'E',
         templateUrl: 'templates/sidebar.html'

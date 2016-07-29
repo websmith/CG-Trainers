@@ -660,26 +660,6 @@ a:hover, a:focus, a:active {
 	}
 }
 
-/*@media screen and (max-width: 768px) {
-	.sidebar {
-		left: -100%;
-	}
-
-	.dashboard {
-		margin-left: 0;
-		width: 100%;
-	}
-
-	.dashboard-header {
-		position: static;
-		width: 100%;
-	}
-
-	.content {
-		margin-top: 0;
-	}
-}*/
-
 @media screen and (max-width: 560px) {
 	.dashboard-module .panel-quarter {
 		width: 100%;

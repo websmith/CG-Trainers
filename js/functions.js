@@ -1,7 +1,9 @@
 window.site = window.site || {};
 
 site.dashboard = (function($) {
+
     function initSidebar() {
+
         $(document).on('click', '.sidebar-toggle-button', function(){
             if($('.sidebar').hasClass('close')){
                 $('.sidebar-toggle-button').css('transform','rotate(0deg)');

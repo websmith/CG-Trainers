@@ -1,10 +1,12 @@
 trainerAppControllers.controller('loginController', ['$scope', function($scope) {
     $scope.title = 'Trainer Login';
-}]).controller('dashController', ['$scope', function($scope) {
+}]).controller('dashController', ['$scope', '$rootScope', function($scope, rootScope) {
     $scope.title = 'Trainer Dashboard';
     angular.element(document).ready(function() {
         site.dashboard.initSidebar();
     });
+
+
 }]).controller('incomeController', ['$scope', function($scope) {
     $scope.title = 'Trainer Income';
 }]).controller('reportsController', ['$scope', function($scope) {
